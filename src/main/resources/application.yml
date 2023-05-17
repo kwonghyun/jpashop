@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://ec2-3-27-108-14.ap-southeast-2.compute.amazonaws.com:3306/likelion-db?serverTimezone=Asia/Seoul
+    username: root
+    password: 12345678
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
