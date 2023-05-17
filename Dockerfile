@@ -1,8 +1,3 @@
-FROM ubuntu:latest
-LABEL authors="Gwanghyun"
-
-ENTRYPOINT ["top", "-b"]
-
 FROM gradle:7.6.1-jdk17-alpine as builder
 USER root
 WORKDIR /build
@@ -18,4 +13,4 @@ WORKDIR /app
 # 빌더 이미지에서 jar 파일만 복사
 COPY --from=builder /build/build/libs/*-SNAPSHOT.jar ./app.jar
 EXPOSE 8080
-ENTRYPOINT [ \"java", \"-jar", \"app.jar" \]
+ENTRYPOINT [ \"java", \"-jar", \"app.jar" \ ]
